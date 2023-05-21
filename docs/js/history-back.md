@@ -24,16 +24,16 @@
 const url = new URL(window.location.href);
 
 // 通过beforeunload事件监听页面离开事件，在页面离开前给URL添加标识参数
-window.addEventListener("beforeunload", () => {
+window.addEventListener('beforeunload', () => {
   let state = { href: url.href, origin: history.state };
-  url.searchParams.set("__history__", "back");
-  history.replaceState(state, "", url.href);
+  url.searchParams.set('__history__', 'back');
+  history.replaceState(state, '', url.href);
 });
 
 // 页面载入时，检查当前URL中是否含有标识参数，有的话判定为历史回退返回，注意这里要恢复原本的链接
-if (url.searchParams.get("__history__") === "back") {
+if (url.searchParams.get('__history__') === 'back') {
   let state = history.state;
-  history.replaceState(state.origin, "", state.href);
+  history.replaceState(state.origin, '', state.href);
 }
 ```
 
@@ -58,9 +58,9 @@ if (url.searchParams.get("__history__") === "back") {
    3. 这里只是判断页面是否是历史回退返回，故而应当在页面返回后解绑事件监听并停止轮询检测
 
    ```js
-   window.addEventListener("focus", pageAwakened);
-   window.addEventListener("pageshow", pageAwakened);
-   window.addEventListener("visibilitychange", visible);
+   window.addEventListener('focus', pageAwakened);
+   window.addEventListener('pageshow', pageAwakened);
+   window.addEventListener('visibilitychange', visible);
    function visible() {
      !document.hidden && pageAwakened();
    }
@@ -81,10 +81,10 @@ if (url.searchParams.get("__history__") === "back") {
    function pageAwakened() {
      // 解绑focus、pageshow、visibilitychange的事件绑定并停止轮询检测
      // 另外，这里最好加个执行次数限制控制，保证这里只执行一次
-     window.removeEventListener("focus", pageAwakened);
-     window.removeEventListener("pageshow", pageAwakened);
-     window.removeEventListener("visibilitychange", visible);
-     console.log("awakened at " + new Date());
+     window.removeEventListener('focus', pageAwakened);
+     window.removeEventListener('pageshow', pageAwakened);
+     window.removeEventListener('visibilitychange', visible);
+     console.log('awakened at ' + new Date());
    }
    ```
 

@@ -42,9 +42,9 @@
 ```js
 var div;
 window.onload = function () {
-  div = document.getElementById("div");
+  div = document.getElementById('div');
   div.circular = div; // 属性赋值为当前对象，直接造成循环引用
-  div.lotsOfData = new Array(1000).join("*");
+  div.lotsOfData = new Array(1000).join('*');
 };
 ```
 
@@ -52,12 +52,12 @@ window.onload = function () {
 
 ```js
 window.onload = function () {
-  var div = document.getElementById("div");
+  var div = document.getElementById('div');
   div.onclick = function () {
     // 函数绑定到div.onclick后形成闭包，将保留所在的上下文环境（即作用域链），
     // 检查发现，当前作用域的父作用域中含有对div DOM对象的引用，间接造成了循环引用
   };
-  div.lotsOfData = new Array(1000).join("*");
+  div.lotsOfData = new Array(1000).join('*');
 };
 ```
 
@@ -69,11 +69,11 @@ window.onload = function () {
 
 ```js
 window.onload = function () {
-  var div = document.getElementById("div");
+  var div = document.getElementById('div');
   div.onclick = function () {
     // ...
   };
-  div.lotsOfData = new Array(1000).join("*");
+  div.lotsOfData = new Array(1000).join('*');
   div = null; // 设值为null，避免循环引用
 };
 ```
@@ -87,9 +87,9 @@ window.onload = function () {
   }
   // 额外自执行函数，完成后释放内存
   (function () {
-    var div = document.getElementById("div");
+    var div = document.getElementById('div');
     div.onclick = eventHandle;
-    div.lotsOfData = new Array(1000).join("*");
+    div.lotsOfData = new Array(1000).join('*');
   })();
 };
 ```
@@ -98,9 +98,9 @@ window.onload = function () {
 
 ```js
 window.onload = function () {
-  var div = document.getElementById("div");
+  var div = document.getElementById('div');
   div.onclick = eventHandle;
-  div.lotsOfData = new Array(1000).join("*");
+  div.lotsOfData = new Array(1000).join('*');
 };
 
 function eventHandle() {
@@ -111,4 +111,3 @@ function eventHandle() {
 ## 参考
 
 - [内存管理](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_Management)
-- [Memory leak patterns in JavaScript](https://www.ibm.com/developerworks/web/library/wa-memleak/)

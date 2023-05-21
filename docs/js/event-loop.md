@@ -96,14 +96,14 @@ function stack1(stack) {
 }
 
 function stack2(stack) {
-  console.trace("---------" + stack);
+  console.trace('---------' + stack);
 }
 
 setTimeout(() => {
-  stack1("setTimeout");
+  stack1('setTimeout');
 }, 0);
 
-stack1("global");
+stack1('global');
 ```
 
 输出：
@@ -185,18 +185,18 @@ function stack1(stack) {
 }
 
 function stack2(stack) {
-  console.trace("---------" + stack);
+  console.trace('---------' + stack);
 }
 
 setTimeout(() => {
-  stack1("setTimeout");
+  stack1('setTimeout');
 }, 0);
 
 Promise.resolve().then(() => {
-  stack1("Promise1");
+  stack1('Promise1');
 });
 
-stack1("global");
+stack1('global');
 ```
 
 输出：
@@ -265,6 +265,5 @@ Node 环境内，只有在执行完同一 Event Loop 阶段内的所有宏任务
 
 ## 参考
 
-1. [Introduction to the event loop in Node.js](https://developer.ibm.com/languages/node-js/tutorials/learn-nodejs-the-event-loop)
-2. [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
-3. [图解浏览器的基本工作原理](https://zhuanlan.zhihu.com/p/47407398)
+- [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
+- [图解浏览器的基本工作原理](https://zhuanlan.zhihu.com/p/47407398)

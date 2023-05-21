@@ -15,6 +15,8 @@
         name: 'Fool',
         repo: 'https://github.com/qingpinhuang/fool',
 
+        auto2top: true,
+
         // 相对路径
         relativePath: true,
 
@@ -29,11 +31,23 @@
         search: {
           placeholder: '搜索',
         },
+
+        // mermaid 图形
+        mermaidConfig: {
+          querySelector: '.mermaid',
+        },
       };
     </script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+      window.mermaid = mermaid;
+    </script>
+    <script src="//unpkg.com/docsify-mermaid@2.0.0/dist/docsify-mermaid.js"></script>
   </body>
 </html>
