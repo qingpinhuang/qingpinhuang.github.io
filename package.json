@@ -1,7 +1,7 @@
 {
   "name": "fool",
   "version": "0.0.0",
-  "description": "",
+  "description": "个人知识库",
   "author": "qingpinhuang",
   "license": "MIT",
   "main": "",
@@ -21,5 +21,8 @@
   "homepage": "https://github.com/qingpinhuang/fool#readme",
   "dependencies": {
     "docsify-cli": "^4.4.4"
+  },
+  "engines": {
+    "node": ">= 16"
   }
 }

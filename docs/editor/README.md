@@ -1,3 +1,4 @@
 # Editor
 
-- [Sublime Text](editor/sublimetext.md)
+- [Sublime Text](sublimetext.md)
+- [Visual Studio Code](vscode.md)

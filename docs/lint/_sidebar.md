@@ -1,0 +1,2 @@
+- [< Back](/ 'Fool')
+- [Lint](/lint/)
