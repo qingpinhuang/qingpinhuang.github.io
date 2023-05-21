@@ -1,0 +1,25 @@
+{
+  "name": "fool",
+  "version": "0.0.0",
+  "description": "",
+  "author": "qingpinhuang",
+  "license": "MIT",
+  "main": "",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "serve": "docsify serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingpinhuang/fool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qingpinhuang/fool/issues"
+  },
+  "homepage": "https://github.com/qingpinhuang/fool#readme",
+  "dependencies": {
+    "docsify-cli": "^4.4.4"
+  }
+}

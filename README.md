@@ -2,10 +2,10 @@
 
 ## 依赖
 
-- [docsify](https://docsify.js.org/)
+- [docsify-cli](https://docsify.js.org/)
 
 ## 启动服务
 
 ```bash
-docsify serve docs
+yarn serve
 ```
