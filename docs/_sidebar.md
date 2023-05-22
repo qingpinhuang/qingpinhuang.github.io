@@ -2,5 +2,6 @@
 - [JavaScript](/js/)
 - [TypeScript](/typescript/)
 - [Node](/node/)
+- [Npm](/npm/)
 - [Lint](/lint/)
 - [Editor](/editor/)

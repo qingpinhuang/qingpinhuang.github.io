@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qingpinhuang/fool.git"
+    "url": "git+https://github.com/qingpinhuang/qingpinhuang.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/qingpinhuang/fool/issues"
+    "url": "https://github.com/qingpinhuang/qingpinhuang.github.io/issues"
   },
-  "homepage": "https://github.com/qingpinhuang/fool#readme",
+  "homepage": "https://github.com/qingpinhuang/qingpinhuang.github.io#readme",
   "dependencies": {
     "docsify-cli": "^4.4.4"
   },
