@@ -3,5 +3,5 @@
 - [TypeScript](/typescript/)
 - [Node](/node/)
 - [Npm](/npm/)
-- [Lint](/lint/)
+- [Linter](/linter/)
 - [Editor](/editor/)

@@ -1,3 +1,0 @@
-# Lint
-
-- [ESLint](eslint.md)
