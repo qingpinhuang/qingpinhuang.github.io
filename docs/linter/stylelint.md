@@ -2,6 +2,80 @@
 
 > 官网：https://stylelint.io/
 
+## 如何开始
+
+> 详见：https://stylelint.io/user-guide/get-started
+
+1. 安装 `stylelint`
+
+```bash
+npm install --save-dev stylelint
+```
+
+2. 配置 `.stylelintrc.{cjs,js,json,yaml,yml}`
+
+```json
+// .stylelintrc 示例
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"]
+}
+```
+
+> - `stylelint-config-standard-scss`：SCSS 规则配置
+> - `stylelint-config-recess-order`：CSS 属性顺序（推荐）
+>
+> ```bash
+> npm install --save-dev stylelint-config-standard-scss stylelint-config-recess-order
+> ```
+
+3. 执行 Lint
+
+```bash
+npx stylelint "**/*.{css,scss}"
+```
+
+## Stylelint + VSCode
+
+### 期望
+
+- 开发时提示错误（标红/黄色波浪线）
+- 保存时自动修复代码
+
+### 步骤
+
+1. 安装 [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) 插件
+
+> 可将 Stylelint 插件添加到「工作区建议」，以使每位开发者都安装此插件
+>
+> - 在扩展列表中，单击鼠标右键，选择「添加到工作区建议」
+> - 或者直接修改 _.vscode/extensions.json_ 文件，如下：
+>
+> ```json
+> // .vscode/extensions.json
+> {
+>   "recommendations": ["stylelint.vscode-stylelint"]
+> }
+> ```
+
+2. 配置 _.vscode/settings.json_
+
+```json
+{
+  // 在代码保存时执行...
+  "editor.codeActionsOnSave": {
+    // 按照 stylelint 规则修复代码
+    "source.fixAll.stylelint": true
+  },
+
+  // 关闭 VSCode 内建的验证器
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // stylelint 将会执行校验的文件
+  "stylelint.validate": ["css", "less", "postcss", "sass", "scss"]
+}
+```
+
 ## Stylelint + Prettier
 
 ### 依赖
