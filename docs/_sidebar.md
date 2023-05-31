@@ -4,4 +4,5 @@
 - [Node](/node/)
 - [Npm](/npm/)
 - [Linter](/linter/)
+- [Formatter](/formatter/)
 - [Editor](/editor/)
