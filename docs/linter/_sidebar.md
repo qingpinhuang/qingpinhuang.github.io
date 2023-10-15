@@ -1,4 +1,4 @@
 - [< Back](/ 'Fool')
-- [Linter](/linter/)
+- [Linter](./)
   - [ESLint](eslint.md)
   - [Stylelint](stylelint.md)

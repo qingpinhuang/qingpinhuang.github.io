@@ -18,7 +18,7 @@ npm install --save-dev prettier
 // .prettierrc 示例
 {
   "trailingComma": "es5",
-  "tabWidth": 4,
+  "tabWidth": 2,
   "semi": false,
   "singleQuote": true
 }
@@ -64,10 +64,10 @@ npx prettier --write src/
 
 ```json
 {
-  // 保存时自动执行代码格式化
-  "editor.formatOnSave": true,
   // 默认代码格式化工具
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 保存时自动执行代码格式化
+  "editor.formatOnSave": true
 }
 ```
 
@@ -77,7 +77,7 @@ Linter 有两类规则：
 
 **1. 代码格式化规则，如：max-len，no-mixed-spaces-and-tabs，keyword-spacing，comma-style ...**
 
-Prettier 主要提供这方面的规则，并支持自动格式化，使得代码几乎不会出现此类问题
+Prettier 主要提供这方面的规则，并支持自动格式化，使得代码几乎不会出现此类错误
 
 **2. 代码质量规则，如：no-unused-vars，no-extra-bind，no-implicit-globals，prefer-promise-reject-errors ...**
 

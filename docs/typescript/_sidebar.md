@@ -1,5 +1,5 @@
 - [< Back](/ 'Fool')
-- [TypeScript](/typescript/)
+- [TypeScript](./)
   - [基础类型](basic-types.md)
   - [变量声明](variable-declarations.md)
   - [接口](interfaces.md)

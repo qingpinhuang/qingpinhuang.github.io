@@ -1,4 +1,4 @@
 - [< Back](/ 'Fool')
-- [Editor](/editor/)
+- [Editor](./)
   - [Sublime Text](sublimetext.md)
   - [Visual Studio Code](vscode.md)

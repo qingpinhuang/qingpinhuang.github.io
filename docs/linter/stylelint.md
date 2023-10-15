@@ -72,7 +72,7 @@ npx stylelint "**/*.{css,scss}"
   "less.validate": false,
   "scss.validate": false,
   // stylelint 将会执行校验的文件
-  "stylelint.validate": ["css", "less", "postcss", "sass", "scss"]
+  "stylelint.validate": ["css", "postcss", "less", "sass", "scss"]
 }
 ```
 

@@ -1,3 +1,3 @@
 - [< Back](/ 'Fool')
-- [Formatter](/formatter/)
+- [Formatter](./)
   - [Prettier](prettier.md)
