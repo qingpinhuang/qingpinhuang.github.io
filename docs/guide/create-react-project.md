@@ -1,4 +1,4 @@
-# 自定义 React 项目
+# 自定义 React + Next.js 项目
 
 ## 依赖
 

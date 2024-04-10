@@ -16,7 +16,7 @@
 - `install`：`preinstall`、`install`、`postinstall`
 - `publish`：`prepublish`、`publish`、`postpublish`、`prepublishOnly`
 - `pack`：`prepack`、`pack`、`postpack`
-- `<user-defined>`：开发者自定义的脚本
+- `<user-defined>`（开发者自定义的脚本）：`pre<user-defined>`、`<user-defined>`、`post<user-defined>`
 
 ### 常用命令的生命周期
 

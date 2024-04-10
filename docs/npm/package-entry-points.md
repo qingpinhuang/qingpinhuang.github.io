@@ -35,7 +35,7 @@
 
 ## `index.js`
 
-在 `package.json` 中没有找到配置入口时，读取根目录下的 `index.js` 作为包入口
+当 `package.json` 没有配置入口时，读取根目录下的 `index.js` 作为包入口
 
 ## 参考
 
