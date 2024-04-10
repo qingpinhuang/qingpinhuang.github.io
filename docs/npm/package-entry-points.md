@@ -1,12 +1,21 @@
 # NPM 包入口
 
+读取 NPM 包的时候，会按照如下的顺序查找入口：
+
+1. `package.json`
+
+   - `exports`
+   - `main`
+
+2. `index.js`
+
 ## `package.json`
 
-优先读取 `package.json` 中指定的包入口
+在 `package.json` 内，优先读取 `exports` 字段，读取不到时才读取 `main` 字段
 
 ```json
 {
-  // 入口配置，优先于 main 字段（注意：配置的顺序影响解析的结果）
+  // 入口配置，优先于 main 字段（注意：对象内部的配置顺序与解析顺序相关，优先解析配置在最前面的声明）
   "exports": {
     // TypeScript 场景下优先解析，应放在最先的位置
     "types": "./types/index.d.ts",
@@ -19,16 +28,15 @@
   },
   // 入口配置，支持所有版本的 Node.js
   "main": "./cjs/index.cjs.js",
-  // TypeScript 入口
+  // TypeScript 类型声明
   "types": "./types/index.d.ts"
 }
 ```
 
 ## `index.js`
 
-如果 `package.json` 中没有配置入口信息，则使用项目根目录下的 `index.js` 文件作为包入口
+在 `package.json` 中没有找到配置入口时，读取根目录下的 `index.js` 作为包入口
 
 ## 参考
 
-- [包模块 - Node.js 中文网](https://nodejs.cn/api/packages.html)
-- [ECMAScript Modules in Node.js](https://www.typescriptlang.org/docs/handbook/esm-node.html)
+- [Package entry points](https://nodejs.org/api/packages.html#package-entry-points)

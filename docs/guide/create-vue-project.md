@@ -100,7 +100,7 @@ module.exports = {
 
 3、配置 **VSCode** 环境：
 
-3.1 添加 `.vscode/settings.json`，设置代码默认格式化工具为 **Prettier** ，并开启保存时自动格式化：
+3.1 添加 `.vscode/settings.json`，设置默认代码格式化工具为 **Prettier** ，并开启保存时自动格式化：
 
 ```json
 {
@@ -117,8 +117,8 @@ module.exports = {
 
 ```json
 {
-  // 添加 esbenp.prettier-vscode 到 recommendations 数组，其它插件已省略
-  "recommendations": ["esbenp.prettier-vscode"]
+  // 添加 esbenp.prettier-vscode 到 recommendations 数组
+  "recommendations": ["esbenp.prettier-vscode", ...]
 }
 ```
 
@@ -149,7 +149,7 @@ module.exports = {
 };
 ```
 
-3、添加 **ESLint** 到 **Vite** 构建流程，使代码在构建时执行校验：
+3、在 **Vite** 构建流程中添加 **ESLint** 校验：
 
 3.1 安装 `vite-plugin-eslint`
 
@@ -157,7 +157,7 @@ module.exports = {
 pnpm install -D vite-plugin-eslint
 ```
 
-3.2 将 `vite-plugin-eslint` 添加进 `vite.config.js`：
+3.2 在 `vite.config.js` 中配置 `vite-plugin-eslint` 插件：
 
 ```js
 import { defineConfig } from 'vite';
@@ -169,7 +169,7 @@ export default defineConfig({
 });
 ```
 
-4、添加 **Vue** 语法支持：
+4、支持 **Vue** 语法校验：
 
 4.1 安装 `eslint-plugin-vue`
 
@@ -205,7 +205,7 @@ module.exports = {
 
 6、配置 **VSCode** 环境：
 
-6.1 修改 `.vscode/settings.json` 配置，使代码保存后自动执行 **ESLint** 校验：
+6.1 修改 `.vscode/settings.json` 配置，使代码保存后自动执行 **ESLint** 校验并修复错误：
 
 ```json
 {
@@ -220,8 +220,8 @@ module.exports = {
 
 ```json
 {
-  // 添加 dbaeumer.vscode-eslint 到 recommendations 数组，其它插件已省略
-  "recommendations": ["dbaeumer.vscode-eslint"]
+  // 添加 dbaeumer.vscode-eslint 到 recommendations 数组
+  "recommendations": ["dbaeumer.vscode-eslint", ...]
 }
 ```
 
@@ -243,7 +243,7 @@ module.exports = {
 };
 ```
 
-3、添加 **Stylelint** 到 **Vite** 构建流程，使代码在构建时执行校验：
+3、在 **Vite** 构建流程中添加 **Stylelint** 校验：
 
 3.1 安装 `vite-plugin-stylelint`
 
@@ -251,7 +251,7 @@ module.exports = {
 pnpm install -D vite-plugin-stylelint
 ```
 
-3.2 将 `vite-plugin-stylelint` 添加进 `vite.config.js`：
+3.2 在 `vite.config.js` 中配置 `vite-plugin-stylelint` 插件：
 
 ```js
 import { defineConfig } from 'vite';
@@ -271,7 +271,7 @@ export default defineConfig({
 pnpm install -D stylelint-prettier postcss-html
 ```
 
-4.2 将 `stylelint-prettier` 添加到 `.stylelintrc.cjs`：
+4.2 将 `stylelint-prettier`、`postcss-html` 添加到 `.stylelintrc.cjs`：
 
 ```js
 module.exports = {
@@ -295,7 +295,7 @@ module.exports = {
 pnpm install -D postcss-scss sass
 ```
 
-5.2 配置 `.stylelintrc.cjs`：
+5.2 将 `postcss-scss` 添加到 `.stylelintrc.cjs`：
 
 ```js
 module.exports = {
@@ -335,7 +335,7 @@ module.exports = {
 
 7、配置 **VSCode** 环境：
 
-7.1 修改 `.vscode/settings.json` 配置，使代码保存后自动执行 **Stylelint** 校验：
+7.1 修改 `.vscode/settings.json` 配置，使代码保存后自动执行 **Stylelint** 校验并修复错误：
 
 ```json
 {
@@ -344,9 +344,11 @@ module.exports = {
     "source.fixAll.stylelint": true
   },
 
+  // 关闭 VSCode 默认校验
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
+  // Stylelint 校验文件
   "stylelint.validate": ["css", "postcss", "less", "sass", "scss", "vue"]
 }
 ```
@@ -355,12 +357,110 @@ module.exports = {
 
 ```json
 {
-  // 添加 stylelint.vscode-stylelint 到 recommendations 数组，其它插件已省略
-  "recommendations": ["stylelint.vscode-stylelint"]
+  // 添加 stylelint.vscode-stylelint 到 recommendations 数组
+  "recommendations": ["stylelint.vscode-stylelint", ...]
 }
 ```
 
-### 7. 使用 Tailwind CSS
+### 7. 添加 Git 提交校验
+
+1、安装 `husky`、`lint-staged`
+
+```bash
+pnpm install -D husky lint-staged
+```
+
+2、初始化 Git hooks，生成 `.husky` 目录
+
+```bash
+npx husky install
+```
+
+3、`package.json` 添加 `scripts.prepare` 配置
+
+```bash
+pnpm pkg set scripts.prepare="husky install"
+```
+
+则 `package.json` 添加如下配置：
+
+```json
+{
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
+```
+
+4、添加 hook
+
+```bash
+npx husky add .husky/pre-commit "npx lint-staged"
+```
+
+5、添加 `.lintstagedrc.cjs` 配置，参考如下：
+
+```js
+module.exports = {
+  'src/**/*.{js,vue}': ['eslint'],
+  'src/**/*.{css,scss,vue}': ['stylelint'],
+};
+```
+
+6、在 `package.json` 中添加 `scripts`
+
+```json
+{
+  "scripts": {
+    "eslint": "eslint '**/*.{js,vue}'",
+    "stylelint": "stylelint '**/*.{css,scss,vue}'"
+  }
+}
+```
+
+### 8. `jsconfig.json` 或 `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
+```
+
+### 9. `vite.config.js`
+
+```js
+import { defineConfig } from 'vite';
+import path from 'path';
+import vue from '@vitejs/plugin-vue';
+import eslint from 'vite-plugin-eslint';
+import stylelint from 'vite-plugin-stylelint';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue(), eslint(), stylelint()],
+  server: {
+    // port: 5000,
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+});
+```
+
+### 10. `README.md`
+
+### 11. 使用 Tailwind CSS
 
 1、安装 `tailwindcss`、`postcss`、`autoprefixer`
 
@@ -428,101 +528,3 @@ module.exports = {
   extends: ['stylelint-config-tailwindcss'],
 };
 ```
-
-### 8. 添加 Git 提交校验
-
-1、安装 `husky`、`lint-staged`
-
-```bash
-pnpm install -D husky lint-staged
-```
-
-2、初始化 Git hooks，生成 `.husky` 目录
-
-```bash
-npx husky install
-```
-
-3、`package.json` 添加 `scripts.prepare` 配置
-
-```bash
-pnpm pkg set scripts.prepare="husky install"
-```
-
-则 `package.json` 添加如下配置：
-
-```json
-{
-  "scripts": {
-    "prepare": "husky install"
-  }
-}
-```
-
-4、添加 hook
-
-```bash
-npx husky add .husky/pre-commit "npx lint-staged"
-```
-
-5、添加 `.lintstagedrc.cjs` 配置
-
-```js
-module.exports = {
-  'src/**/*.{js,vue}': ['eslint'],
-  'src/**/*.{css,scss,vue}': ['stylelint'],
-};
-```
-
-6、在 `package.json` 中添加 `scripts`
-
-```json
-{
-  "scripts": {
-    "eslint": "eslint '**/*.{js,vue}'",
-    "stylelint": "stylelint '**/*.{css,scss,vue}'"
-  }
-}
-```
-
-### 9. `jsconfig.json` 或 `tsconfig.json`
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "exclude": ["node_modules"]
-}
-```
-
-### 10. `vite.config.js`
-
-```js
-import { defineConfig } from 'vite';
-import path from 'path';
-import vue from '@vitejs/plugin-vue';
-import eslint from 'vite-plugin-eslint';
-import stylelint from 'vite-plugin-stylelint';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue(), eslint(), stylelint()],
-  server: {
-    // port: 5000,
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
-});
-```
-
-### 11. `README.md`
