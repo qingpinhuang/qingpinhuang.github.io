@@ -1,6 +1,6 @@
 - [Home](/ 'Fool')
 - [JavaScript](js/)
-- [TypeScript](typescript/)
+- [TypeScript](ts/)
 - [Node](node/)
 - [Npm](npm/)
 - [Linter](linter/)

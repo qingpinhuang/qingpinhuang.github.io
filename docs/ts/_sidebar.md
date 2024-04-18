@@ -1,0 +1,4 @@
+- [< Back](/ 'Fool')
+- [TypeScript](./)
+  - [模块解析](module-resolution.md)
+  - [严格模式](strict.md)

@@ -59,4 +59,4 @@
 
 ## 参考
 
-[scripts (package.json)](https://docs.npmjs.com/cli/v10/using-npm/scripts)
+- [scripts (package.json)](https://docs.npmjs.com/cli/v10/using-npm/scripts)
