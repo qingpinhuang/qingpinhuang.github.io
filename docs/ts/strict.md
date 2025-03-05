@@ -1,20 +1,22 @@
 # 严格模式
 
+严格模式可通过 `strict` 直接开启，也可以分别指定需要开启严格检查的规则，如下：
+
 ```js
+// tsconfig
+
 {
-  ...
   "compilerOptions": {
+    // 直接开启所有的严格检查
     "strict": true,
-    ...
   },
-  ...
 }
 
 // 等价于
 
 {
-  ...
   "compilerOptions": {
+    // 分别指定开启严格检查的规则
     "alwaysStrict": true, // 所有文件按 ES 严格模式解析，并添加 "use strict" 语句
     "noImplicitAny": true, // 不允许任何隐式的 any 类型
     "noImplicitThis": true, // 不允许隐式推断为 any 类型的 this
@@ -23,9 +25,7 @@
     "strictFunctionTypes": true, // 严格检查函数的类型声明，包含：入参、返回值
     "strictPropertyInitialization": true, // 声明为非 undefined 的类实例属性必须初始化
     "useUnknownInCatchVariables": true, // TypeScript 4.0 起支持，将 catch 语句的传入参数转化为 unknown 类型
-    ...
   }
-  ...
 }
 ```
 

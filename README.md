@@ -9,5 +9,5 @@
 ## 启动服务
 
 ```bash
-yarn serve
+pnpm run serve
 ```

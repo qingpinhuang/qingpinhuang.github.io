@@ -2,7 +2,7 @@
 - [JavaScript](js/)
 - [TypeScript](ts/)
 - [Node](node/)
-- [Npm](npm/)
+- [Package Manager](package-manager/)
 - [Linter](linter/)
 - [Formatter](formatter/)
 - [Editor](editor/)

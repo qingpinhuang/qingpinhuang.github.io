@@ -1,19 +1,20 @@
 # NPM 包入口
 
-读取 NPM 包的时候，会按照如下的顺序查找入口：
+NPM 包按照如下的顺序查找入口文件：
 
-1. `package.json`
+1. `package.json` 文件
 
-   - `exports`
-   - `main`
+   - `exports` 字段
+   - `main` 字段
 
-2. `index.js`
+2. `index.js` 文件
 
-## `package.json`
+## `package.json` 文件
 
 在 `package.json` 内，优先读取 `exports` 字段，读取不到时才读取 `main` 字段
 
 ```json
+// package.json
 {
   // 入口配置，优先于 main 字段（注意：对象内部的配置顺序与解析顺序相关，优先解析配置在最前面的声明）
   "exports": {
@@ -33,7 +34,7 @@
 }
 ```
 
-## `index.js`
+## `index.js` 文件
 
 当 `package.json` 没有配置入口时，读取根目录下的 `index.js` 作为包入口
 
