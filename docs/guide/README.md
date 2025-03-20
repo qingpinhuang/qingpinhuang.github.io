@@ -1,4 +1,4 @@
 # Guide
 
 - [自定义 Vue + Vite 项目](create-vue-project.md)
-- [自定义 React 项目](create-react-project.md)
+- [自定义 React + Next.js 项目](create-react-project.md)

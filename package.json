@@ -10,7 +10,7 @@
   },
   "scripts": {
     "serve": "docsify serve docs --port 5001",
-    "build": "node ./scripts/build.js"
+    "gen-dir": "node ./scripts/gen-dir.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,6 @@
     "docsify-cli": "^4.4.4"
   },
   "devDependencies": {
-    "marked": "^5.0.5"
+    "marked": "^15.0.7"
   }
 }
