@@ -1,3 +1,0 @@
-# Formatter
-
-- [Prettier](prettier.md)

@@ -78,6 +78,8 @@ npx stylelint "**/*.{css,scss}"
 
 ## Stylelint + Prettier
 
+使用 Prettier 的规则作为 Stylelint 规则进行验证
+
 ### 依赖
 
 - [stylelint](https://github.com/stylelint/stylelint)

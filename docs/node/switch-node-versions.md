@@ -6,7 +6,7 @@
 brew list | grep node
 ```
 
-## 查看可安装的版本
+## 查看可安装的 node 版本
 
 ```bash
 brew search node
@@ -25,7 +25,7 @@ brew unlink node
 brew link --overwrite --force node@16
 ```
 
-## 查看 node 版本
+## 查看当前 node 版本
 
 ```bash
 node -v

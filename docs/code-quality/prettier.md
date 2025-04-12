@@ -87,8 +87,8 @@ Prettier 没有这方面的规则，而这恰好是 Linter 最重要的部分，
 
 ## Prettier + ESLint
 
-> 详见：[ESLint](/linter/eslint?id=eslint-prettier)
+> 详见：[ESLint](./eslint?id=eslint-prettier)
 
 ## Prettier + Stylelint
 
-> 详见：[Stylelint](/linter/stylelint?id=stylelint-prettier)
+> 详见：[Stylelint](./stylelint?id=stylelint-prettier)

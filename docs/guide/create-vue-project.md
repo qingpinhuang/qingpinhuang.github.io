@@ -80,7 +80,7 @@ dist-ssr
 
 ### 4. 添加 Prettier
 
-> 详细见 [Prettier](/formatter/prettier)
+> 详细见 [Prettier](/code-quality/prettier)
 
 1、安装 `prettier`
 
@@ -124,7 +124,7 @@ module.exports = {
 
 ### 5. 添加 ESLint
 
-> 详细见 [ESLint](/linter/eslint.md)
+> 详细见 [ESLint](/code-quality/eslint.md)
 
 1、安装 `eslint`
 
@@ -227,7 +227,7 @@ module.exports = {
 
 ### 6. 添加 Stylelint
 
-> 详细见 [Stylelint](/linter/stylelint)
+> 详细见 [Stylelint](/code-quality/stylelint)
 
 1、安装 `stylelint`
 

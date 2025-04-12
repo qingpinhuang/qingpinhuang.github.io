@@ -73,6 +73,8 @@ npx eslint project-dir/ file.js
 
 ## ESLint + Prettier
 
+使用 Prettier 的规则作为 ESLint 规则进行验证
+
 ### 依赖
 
 - [eslint](https://github.com/eslint/eslint)
