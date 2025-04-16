@@ -1,10 +1,10 @@
 # ESLint
 
-> 官网：https://eslint.org/
+> 官网：<https://eslint.org/>
 
 ## 如何开始
 
-> 详见：https://eslint.org/docs/latest/use/getting-started
+> 详见：<https://eslint.org/docs/latest/use/getting-started>
 
 1. 安装 `eslint`
 

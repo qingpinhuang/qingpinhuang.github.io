@@ -128,7 +128,7 @@ function updateDir(tokens, items) {
   const _items = [];
 
   if (Array.isArray(items)) {
-    tokens.forEach((token) => {
+    (tokens || []).forEach((token) => {
       const index = items.findIndex((item) => `[${item.name}](${item.link})` === token.text);
       if (index === -1) return;
 

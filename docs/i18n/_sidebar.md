@@ -1,0 +1,3 @@
+- [< Back](/ 'Fool')
+- [I18n](./)
+  - [Lingui](lingui.md)

@@ -4,5 +4,6 @@
 - [Node](node/)
 - [Code Quality](code-quality/)
 - [Package Manager](package-manager/)
+- [I18n](i18n/)
 - [Editor](editor/)
 - [Guide](guide/)
