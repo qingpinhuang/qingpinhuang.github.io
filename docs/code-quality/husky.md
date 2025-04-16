@@ -1,6 +1,6 @@
 # Husky
 
-> 官网：https://typicode.github.io/husky/
+> 官网：<https://typicode.github.io/husky/>
 
 支持例如 `pre-commit` 、`pre-push` 等 Git Hooks，使代码在 `commit` 或 `push` 时，能自动化 **检查提交信息**、**检查代码** 和 **运行测试** 等
 

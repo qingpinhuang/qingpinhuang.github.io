@@ -1,10 +1,10 @@
 # Stylelint
 
-> 官网：https://stylelint.io/
+> 官网：<https://stylelint.io/>
 
 ## 如何开始
 
-> 详见：https://stylelint.io/user-guide/get-started
+> 详见：<https://stylelint.io/user-guide/get-started>
 
 1. 安装 `stylelint`
 

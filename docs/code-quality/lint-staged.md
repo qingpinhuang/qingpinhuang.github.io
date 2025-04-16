@@ -1,6 +1,6 @@
 # lint-staged
 
-> 仓库：https://github.com/lint-staged/lint-staged
+> 仓库：<https://github.com/lint-staged/lint-staged>
 
 对已暂存的文件执行预定的任务，如：formatters、linters
 

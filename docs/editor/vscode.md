@@ -1,6 +1,6 @@
 # Visual Studio Code
 
-> 官网：https://code.visualstudio.com/
+> 官网：<https://code.visualstudio.com/>
 
 ## 常用插件
 
@@ -12,7 +12,7 @@
 
 ## 设置
 
-> 文档：https://code.visualstudio.com/docs/getstarted/settings
+> 文档：<https://code.visualstudio.com/docs/getstarted/settings>
 
 针对项目进行编辑器设置，其内容会保存在 `project/.vscode` 目录内，常见的有以下文件：
 

@@ -1,10 +1,10 @@
 # Prettier
 
-> 官网：https://prettier.io/
+> 官网：<https://prettier.io/>
 
 代码格式化工具
 
-## 如何使用
+## 如何开始
 
 1. 安装 `prettier`
 
@@ -32,9 +32,13 @@ build
 coverage
 ```
 
-4. 格式化代码
+4. 执行 `prettier`
 
 ```bash
+# 检查 src 目录下的所有文件，输出汇总的异常信息
+npx prettier --check src/
+
+# 检查 src 目录下的所有文件，并自动修复检查到的异常
 npx prettier --write src/
 ```
 
