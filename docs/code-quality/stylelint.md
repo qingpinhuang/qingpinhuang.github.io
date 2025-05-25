@@ -6,6 +6,23 @@
 
 > 详见：<https://stylelint.io/user-guide/get-started>
 
+### 快速开始
+
+执行初始化命令：
+
+```bash
+npm init stylelint
+```
+
+将会自动安装依赖并生成 stylelint 配置文件，示例如下：
+
+```json
+// .stylelintrc.json
+{ "extends": ["stylelint-config-standard"] }
+```
+
+### 手动设置
+
 1. 安装 `stylelint`
 
 ```bash
@@ -15,7 +32,7 @@ npm install --save-dev stylelint
 2. 配置 `.stylelintrc.{cjs,js,json,yaml,yml}`
 
 ```json
-// .stylelintrc 示例
+// .stylelintrc.json
 {
   "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"]
 }
@@ -75,6 +92,10 @@ npx stylelint "**/*.{css,scss}"
   "stylelint.validate": ["css", "postcss", "less", "sass", "scss"]
 }
 ```
+
+3. 添加 `stylelint` 配置
+
+> 具体见 [如何开始](/code-quality/stylelint?id=如何开始)
 
 ## Stylelint + Prettier
 

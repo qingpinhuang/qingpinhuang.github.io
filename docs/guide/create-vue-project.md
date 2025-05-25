@@ -76,6 +76,7 @@ dist-ssr
 
 # Caches
 .stylelintcache
+.eslintcache
 ```
 
 ### 4. 添加 Prettier

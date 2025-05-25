@@ -6,28 +6,54 @@
 
 > 详见：<https://eslint.org/docs/latest/use/getting-started>
 
+### 快速开始
+
+执行初始化命令：
+
+```bash
+npm init @eslint/config@latest
+```
+
+按照指引选择合适的配置，生成 `eslint` 配置文件，示例如下：
+
+```js
+// eslint.config.mjs
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
+import js from '@eslint/js';
+
+export default defineConfig([
+  { files: ['**/*.js'], languageOptions: { globals: globals.browser } },
+  { files: ['**/*.js'], plugins: { js }, extends: ['js/recommended'] },
+]);
+```
+
+### 手动设置
+
 1. 安装 `eslint`
 
 ```bash
-npm install --save-dev eslint
+npm install --save-dev eslint @eslint/js
 ```
 
-2. 配置 `.eslintrc.{cjs,js,json,yaml,yml}`
+2. 配置 `eslint.config.{mjs,cjs,js}`
 
-```json
-// .eslintrc 示例
-{
-  "env": {
-    "es2021": true,
-    "browser": true,
-    "node": true
+```js
+// eslint.config.js
+import { defineConfig } from 'eslint/config';
+import js from '@eslint/js';
+
+export default defineConfig([
+  {
+    files: ['**/*.js'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-undef': 'warn',
+    },
   },
-  "extends": ["eslint:recommended"],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  }
-}
+]);
 ```
 
 3. 执行 Lint
@@ -70,6 +96,10 @@ npx eslint project-dir/ file.js
   }
 }
 ```
+
+3. 添加 `eslint` 配置
+
+> 具体见 [如何开始](/code-quality/eslint?id=如何开始)
 
 ## ESLint + Prettier
 
